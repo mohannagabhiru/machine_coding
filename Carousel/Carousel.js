@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 const Carousel = ({ data }) => {
   const [activeElement, setActiveElement] = useState(0);
   const interval = useRef(null);
+  
   useEffect(() => {
     startCarousel();
     return () => {
