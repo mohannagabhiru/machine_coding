@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: black;
+  --color-primary: blue;
+  --color-secondary: lightblue;
+  --color-text: white;
+}
+
+.app {
+  font-family: sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stepper-container {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-width: 800px; /* Prevents stretching too wide on massive screens */
+}
+
+.stepper-holder {
+  flex: 1; 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.step-line {
+  flex-grow: 1;
+  height: 2px;
+  /* margin-right: 8px; */
+}
+
+.step-line.unfinished {
+  background-color: var(--color-secondary);
+}
+.step-line.finished {
+  background-color: var(--color-primary);
+}
+
+.step-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0; /* Prevents the circle from turning into an oval */
+  border: 2px solid var(--color-secondary);
+}
+
+.step-circle.finished {
+  border-color: var(--color-primary);
+  background-color: var(
+    --color-primary
+  ); /* Added color fill for completed looks */
+}
